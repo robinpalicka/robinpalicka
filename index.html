@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta http-equiv="content-language" content="cs" />
+        <meta http-equiv="content-script-type" content="text/javascript" />
+        <meta http-equiv="content-style-type" content="text/css" />
+       
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+        
+        <title>palicka.eu</title>
+        
+        
+        <style>
+            body, html {
+                font: 60px/1.5 "Open Sans", Arial, helvetica, sans-serif;
+                font-weight: 300; 
+                text-align: center;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                background: #fff;
+                color: #000;
+                cursor: default;
+                -webkit-user-select: none; 
+                -moz-user-select: none; 
+                -ms-user-select: none; 
+                -o-user-select: none;
+                user-select: none;
+            }
+            ::selection {
+            	background: #fff;
+            }
+            h1 {
+                font-size: 40px;
+                font-weight: 300; 
+                margin: 0;
+                padding: 0;
+                position: fixed;
+                right: 40px;
+                bottom: 10px;
+                color: #ddd;
+            } 
+            h1 a {
+                color: #ddd;
+                text-decoration: none;
+            } 
+            h1 a:hover {
+                color: #bbb;
+            } 
+            table, tr, td {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                vertical-align: middle;
+            }
+            td span {
+                margin-bottom: 7%;
+                display: inline-block;
+                padding: 35px;
+            }
+            #loading { 
+                padding-left: 60px;
+                padding-right: 10px;
+            }          
+            #fun { 
+                display: none; 
+                padding-left: 10px;
+                padding-right: 60px;
+            }
+            i {
+                font-style: normal;
+                color: white;
+            }
+        </style>
+
+        
+        <script type="text/javascript">
+        
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-22130091-1']);
+          _gaq.push(['_trackPageview']);
+        
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        
+        </script>
+        
+    </head>
+  
+    <body>
+        <!--<h1>palicka.eu</h1>-->
+        
+        <table><tr><td>
+            <span id="loading">loading <i>.</i><i>.</i><i>.</i></span>
+            <span id="fun">... just fun</span>
+        </td></tr></table>
+        
+        
+                
+        
+        <script type="text/javascript">
+        
+            var dots = document.getElementById("loading").getElementsByTagName("i");
+            setTimeout( function () { dots[0].style.color = "black" }, 500 );
+            setTimeout( function () { dots[1].style.color = "black" }, 1000 );
+            setTimeout( function () { dots[2].style.color = "black" }, 1500 );
+            setTimeout( function () { dots[0].style.color = "white" }, 2000 );
+            setTimeout( function () { dots[1].style.color = "white" }, 2500 );
+            setTimeout( function () { dots[2].style.color = "white" }, 3000 );
+            setTimeout( function () { dots[0].style.color = "black" }, 3500 );
+            setTimeout( function () { dots[1].style.color = "black" }, 4000 );
+            setTimeout( function () { dots[2].style.color = "black" }, 4500 );
+            setTimeout( function () { dots[0].style.color = "white" }, 5000 );
+            setTimeout( function () { dots[1].style.color = "white" }, 5500 );
+            setTimeout( function () { dots[2].style.color = "white" }, 6000 );
+            setTimeout( function () { dots[0].style.color = "black" }, 6500 );
+            setTimeout( function () { dots[1].style.color = "black" }, 6500 );
+            setTimeout( function () { dots[2].style.color = "black" }, 6500 );
+            setTimeout( "hide(100)", 7000 );
+            
+
+            function hide(opacity) {
+                var eleLoading = document.getElementById("loading");
+                opacity = parseInt(opacity) - 1;
+                if ( opacity >= 0 ) {
+                    if ( opacity < 10 ) 
+                        eleLoading.style.opacity = "0.0" + opacity;  
+                    else
+                        eleLoading.style.opacity = "0." + opacity;  
+                    
+                    window.setTimeout( 'hide(' + opacity + ')', 25 - opacity / 4 );                              
+                }
+                else {
+                    document.getElementById("loading").style.display = "none";
+                    document.getElementById("fun").style.opacity = 0;
+                    document.getElementById("fun").style.display = "inline-block";  
+                    show(0);        
+                }
+            }
+            
+            function show(opacity) {
+                var eleFun = document.getElementById("fun");
+                opacity = parseInt(opacity) + 1;
+                if ( opacity < 100 ) {
+                    if ( opacity < 10 ) 
+                        eleFun.style.opacity = "0.0" + opacity;  
+                    else
+                        eleFun.style.opacity = "0." + opacity;  
+                    
+                    window.setTimeout( 'show(' + opacity + ')', 25 - opacity / 4 );                              
+                } else if ( opacity == 100 ) {
+                    eleFun.style.opacity = "1";
+                }
+            }
+        
+        </script>
+        
+    </body>
+</html>
